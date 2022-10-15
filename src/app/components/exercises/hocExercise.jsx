@@ -1,7 +1,12 @@
 import React from "react";
 import CollapseWrapper from "../common/collapse";
+import Divider from "../common/divider";
+import SimpleComponent from "./simpleComponent";
+import withFunctions from "./withFunctions";
 
 const HocExercise = () => {
+    const ComponentWithHook = withFunctions(SimpleComponent);
+
     return (
         <CollapseWrapper title="Упражнение">
             <p className="mt-3">
@@ -30,6 +35,7 @@ const HocExercise = () => {
                     системы&quot; вызывается <code>onLogOut</code>
                 </li>
             </ul>
+
             <p className="mt-3">
                 Вам необходимо создать HOC с названием{" "}
                 <code>withFunctions</code>, который будет принимать компонент{" "}
@@ -76,6 +82,8 @@ const HocExercise = () => {
                 <code>SimpleComponent</code> обновится после перезагрузки
                 страницы
             </p>
+            <Divider />
+            <ComponentWithHook fild={"123"} />
         </CollapseWrapper>
     );
 };
